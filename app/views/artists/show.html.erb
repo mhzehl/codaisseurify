@@ -15,7 +15,7 @@
 		  </div>
       <div class="container">
 	  		<div class="col-md-12">
-		  		<h2>List of songs</h2>
+		  		<h2><%= @artist.name %> Discography</h2>
             <% @artist.songs.each do |song| %>
               <ul>
                 <li>
@@ -29,6 +29,11 @@
             <% end %>
 			  </div>
 		  </div>
+      <div class="panel-body">
+        <h2>Missing a song?</h2>
+        <p>Add your song below:</p>
+        <%= render 'songs/form' %>
+      </div>
 	  </div>
   </div>
 </div>

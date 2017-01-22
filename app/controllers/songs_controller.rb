@@ -12,13 +12,14 @@ class SongsController < ApplicationController
   end
 
   def create
-    @song = Song.new(song_params)
+    artist = Artist.find(params[:artist_id])
+    @song = artist.songs.new(song_params)
 
     if @song.save
-      redirect_to @song, notice: "Song successfully added"
+      redirect_to artist_path(params[:artist_id]), notice: "Song successfully added"
 
     else
-      render :new
+      redirect_to artist_path(params[:artist_id]), notice: "Couldn't add song. Please try again."
     end
   end
 
@@ -29,4 +30,9 @@ class SongsController < ApplicationController
 
     redirect_to artist_path(params[:artist_id])
   end
+
+  private
+    def song_params
+      params.require(:song).permit(:name, :release_year, :video_url)
+    end
 end
