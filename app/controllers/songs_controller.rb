@@ -6,4 +6,19 @@ class SongsController < ApplicationController
   def show
     @songs = Song.find(params[:id])
   end
+
+  def new
+    @song = Song.new
+  end
+
+  def create
+    @song = Song.new(song_params)
+
+    if @song.save
+      redirect_to @song, notice: "Song successfully added"
+
+    else
+      render :new
+    end
+  end
 end
