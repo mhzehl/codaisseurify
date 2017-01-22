@@ -3,8 +3,10 @@
 <div>
   <h3>Sorting options</h3>
   <ul>
-    <li><%= link_to "Name", :sort => "name" %></li>
-    <li><%= link_to "Date of creation", :sort => "created_at" %></li>
+    <li><%= link_to "Name ASC", :sort => "name", :direction => "asc" %></li>
+    <li><%= link_to "Name DESC", :sort => "name", :direction => "desc" %></li>
+    <li><%= link_to "Date of creation ASC", :sort => "created_at", :direction => "asc" %></li>
+    <li><%= link_to "Date of creation DESC", :sort => "created_at", :direction => "desc" %></li>
   </ul>
 </div>
 
