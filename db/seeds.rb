@@ -10,9 +10,9 @@ song5 = Song.create( { name: "Sharp Dressed Man", release_year: 1983, video_url:
 song6 = Song.create( { name: "La Grange", release_year: 1973, video_url: "https://www.youtube.com/watch?v=aB4nH8qx2IM" } )
 
 # Artists -- An artist has many songs -- parent
-artist1 = Artist.create( { name: "Muse", genre: "Progressive Rock", band_members: 3, image_url: "http://bit.ly/2iv798V" } )
-artist2 = Artist.create( { name: "Radiohead", genre: "Alternative Rock", band_members: 5, image_url: "http://bit.ly/2irgy64" } )
-artist3 = Artist.create( { name: "ZZ Top", genre: "Blues Rock", band_members: 6, image_url: "http://bit.ly/2jyL8Yv" } )
+artist1 = Artist.create( { name: "Muse", genre: "Progressive Rock", band_members: 3, image_url: "http://res.cloudinary.com/dyl4vtost/image/upload/v1485084782/muse2_knapdb.jpg" } )
+artist2 = Artist.create( { name: "Radiohead", genre: "Alternative Rock", band_members: 5, image_url: "http://res.cloudinary.com/dyl4vtost/image/upload/v1485087484/radiohead-radiohead-22916726-2480-1087_wupbko.jpg" } )
+artist3 = Artist.create( { name: "ZZ Top", genre: "Blues Rock", band_members: 6, image_url: "http://res.cloudinary.com/dyl4vtost/image/upload/v1485084835/zz-top_k0kock.jpg" } )
 
 artist1.songs << [song1, song2]
 artist1.save
