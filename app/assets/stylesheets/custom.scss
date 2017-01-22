@@ -1,0 +1,62 @@
+// ## Header ##
+
+header {
+  margin-top: 50px;
+  text-align: center;
+  background-image: url(http://res.cloudinary.com/dyl4vtost/image/upload/v1485099958/IADB_nsmt2g.jpg);
+  color: white;
+  background-size: cover;
+}
+header .container {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+header img {
+  display: block;
+  margin: 0 auto 20px;
+}
+header .intro-text .name {
+  display: block;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2em;
+}
+header .intro-text .skills {
+  font-size: 1.25em;
+  font-weight: 300;
+}
+@media (min-width: 768px) {
+  header .container {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  header .intro-text .name {
+    font-size: 4.75em;
+  }
+  header .intro-text .skills {
+    font-size: 1.75em;
+  }
+}
+
+// ## Artist items ##
+
+.artist-card {
+  border: solid black;
+  height: 350px;
+  width: auto;
+  margin: 0 10px 20px;
+  right: 0;
+}
+
+.artist-img {
+  width: 300px;
+  height: auto;
+}
+
+.artist-card .artist-link {
+  display: block;
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+}

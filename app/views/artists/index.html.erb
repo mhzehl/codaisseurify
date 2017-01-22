@@ -1,25 +1,59 @@
-<h1>Artist Overview</h1>
+<!-- Header -->
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="intro-text">
+          <span class="name">The Internet Artist Database</span>
+          <hr class="star-light">
+          <span class="skills">Find every artist on the Internet!</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 
-<div>
-  <h3>Sorting options</h3>
-  <ul>
-    <li><%= link_to "Name ASC", :sort => "name", :direction => "asc" %></li>
-    <li><%= link_to "Name DESC", :sort => "name", :direction => "desc" %></li>
-    <li><%= link_to "Date of creation ASC", :sort => "created_at", :direction => "asc" %></li>
-    <li><%= link_to "Date of creation DESC", :sort => "created_at", :direction => "desc" %></li>
-  </ul>
-</div>
+<!-- Artists -->
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h3>Sorting options</h3>
+        <ul>
+          <li><%= link_to "Name ASC", :sort => "name", :direction => "asc" %></li>
+          <li><%= link_to "Name DESC", :sort => "name", :direction => "desc" %></li>
+          <li><%= link_to "Date of creation ASC", :sort => "created_at", :direction => "asc" %></li>
+          <li><%= link_to "Date of creation DESC", :sort => "created_at", :direction => "desc" %></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2>The Artists</h2>
+          <hr>
+        </div>
+      </div>
+      <div class="row">
+        <% @artists.each do |artist| %>
+        <div class="col-sm-4 artist-card">
+          <h4><%= link_to artist.name, artist_path(artist), class: "artist-link" %></h4>
+          <%= image_tag artist.image_url, class: "artist-img" %>
+          <p><%= artist.genre %></p>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</body>
 
-<hr>
-
-<div>
-  <ul>
-    <% @artists.each do |artist| %>
-      <li>
-        <h4><%= link_to artist.name, artist_path(artist) %></h4>
-        <p><%= image_tag artist.image_url, class: "artist-img" %>
-        <p><%= artist.genre %></p>
-      </li>
-    <% end %>
-  </ul>
-</div>
+<!-- <div class="col-sm-4 portfolio-item">
+    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+        <div class="caption">
+            <div class="caption-content">
+                <i class="fa fa-search-plus fa-3x"></i>
+            </div>
+        </div>
+        <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
+    </a>
+</div> -->
