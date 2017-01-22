@@ -113,3 +113,21 @@ input[type=submit] {
   border-color: #4cae4c;
   text-decoration: none;
 }
+
+/*********************************************
+				SORTING
+*********************************************/
+
+.current {
+  padding-right: 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+.asc {
+  background-image: url(http://res.cloudinary.com/dyl4vtost/image/upload/v1485117498/up_arrow_oub2ze.gif);
+}
+
+.desc {
+  background-image: url(http://res.cloudinary.com/dyl4vtost/image/upload/v1485117498/arrow_down_tt7ugm.gif);
+}

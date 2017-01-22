@@ -20,10 +20,8 @@
       <div class="col-lg-12">
         <h3>Sorting options</h3>
         <ul>
-          <li><%= link_to "Name ASC", :sort => "name", :direction => "asc" %></li>
-          <li><%= link_to "Name DESC", :sort => "name", :direction => "desc" %></li>
-          <li><%= link_to "Date of creation ASC", :sort => "created_at", :direction => "asc" %></li>
-          <li><%= link_to "Date of creation DESC", :sort => "created_at", :direction => "desc" %></li>
+          <li><%= sorting "name" %></li>
+          <li><%= sorting "created_at", "Date of Creation" %></li>
         </ul>
       </div>
     </div>
