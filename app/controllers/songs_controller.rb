@@ -27,6 +27,6 @@ class SongsController < ApplicationController
 
     @song.destroy
 
-    redirect_to @song
+    redirect_to artist_path(params[:artist_id])
   end
 end
