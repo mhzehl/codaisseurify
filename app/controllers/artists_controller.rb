@@ -9,6 +9,14 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
   end
 
+  def destroy
+    @artist = Artist.find(params[:id])
+
+    @artist.destroy
+
+    redirect_to artists_path, notice: "Artist successfully removed"
+  end
+
   private
   def sort_column
     Artist.column_names.include?(params[:sort]) ? params[:sort] : "name"
