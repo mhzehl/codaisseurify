@@ -1,3 +1,4 @@
+Photo.delete_all
 Song.delete_all
 Artist.delete_all
 
@@ -11,11 +12,17 @@ song6 = Song.create( { name: "La Grange", release_year: 1973, video_url: "https:
 song7 = Song.create( { name: "Chop Suey!", release_year: 2001, video_url: "https://www.youtube.com/watch?v=CSvFpBOe8eY" })
 song8 = Song.create( { name: "Toxicity", release_year: 2001, video_url: "https://www.youtube.com/watch?v=iywaBOMvYLI" })
 
+# Photos -- A photo belongs to an artist -- children
+photo1 = Photo.create(remote_image_url: "http://res.cloudinary.com/dyl4vtost/image/upload/v1485084782/muse2_knapdb.jpg")
+photo2 = Photo.create(remote_image_url: "http://res.cloudinary.com/dyl4vtost/image/upload/v1485087484/radiohead-radiohead-22916726-2480-1087_wupbko.jpg")
+photo3 = Photo.create(remote_image_url: "http://res.cloudinary.com/dyl4vtost/image/upload/v1485084835/zz-top_k0kock.jpg")
+photo4 = Photo.create(remote_image_url: "http://res.cloudinary.com/dyl4vtost/image/upload/v1485092614/download_ipos9t.jpg")
+
 # Artists -- An artist has many songs -- parent
-artist1 = Artist.create( { name: "Muse", genre: "Progressive Rock", band_members: 3, image_url: "http://res.cloudinary.com/dyl4vtost/image/upload/v1485084782/muse2_knapdb.jpg" } )
-artist2 = Artist.create( { name: "Radiohead", genre: "Alternative Rock", band_members: 5, image_url: "http://res.cloudinary.com/dyl4vtost/image/upload/v1485087484/radiohead-radiohead-22916726-2480-1087_wupbko.jpg" } )
-artist3 = Artist.create( { name: "ZZ Top", genre: "Blues Rock", band_members: 6, image_url: "http://res.cloudinary.com/dyl4vtost/image/upload/v1485084835/zz-top_k0kock.jpg" } )
-artist4 = Artist.create( { name: "System of a Down", genre: "Heavy Metal", band_members: 5, image_url: "http://res.cloudinary.com/dyl4vtost/image/upload/v1485092614/download_ipos9t.jpg" } )
+artist1 = Artist.create( { name: "Muse", genre: "Progressive Rock", band_members: 3, photos: [photo1] } )
+artist2 = Artist.create( { name: "Radiohead", genre: "Alternative Rock", band_members: 5, photos: [photo2] } )
+artist3 = Artist.create( { name: "ZZ Top", genre: "Blues Rock", band_members: 6, photos: [photo3] } )
+artist4 = Artist.create( { name: "System of a Down", genre: "Heavy Metal", band_members: 5, photos: [photo4] } )
 
 artist1.songs << [song1, song2]
 artist1.save
