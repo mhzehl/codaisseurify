@@ -3,7 +3,7 @@
 *********************************************/
 
 header {
-  margin-top: 50px;
+  margin-top: -10px;
   text-align: center;
   background-image: url(http://res.cloudinary.com/dyl4vtost/image/upload/v1485099958/IADB_nsmt2g.jpg);
   color: white;
@@ -78,9 +78,10 @@ header .intro-text .skills {
 	border-radius: 0px;
 }
 
-.container-fluid{
+.container-fluid {
 	max-width: 1140px;
 	margin: 0 auto;
+  margin-top: -10px;
 }
 
 .view-wrapper {
@@ -113,10 +114,6 @@ header .intro-text .skills {
 .btn.btn-danger a {
   color: white;
   text-decoration: none;
-}
-
-.container-fluid {
-  margin-top: 50px;
 }
 
 input[type=submit] {
