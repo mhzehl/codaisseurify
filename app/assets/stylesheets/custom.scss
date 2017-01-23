@@ -1,4 +1,6 @@
-// ## Header ##
+/*********************************************
+				HEADER
+*********************************************/
 
 header {
   margin-top: 50px;
@@ -39,7 +41,9 @@ header .intro-text .skills {
   }
 }
 
-// ## Artist Overview Page ##
+/*********************************************
+				ARTIST OVERVIEW PAGE
+*********************************************/
 
 .artist-card {
   border: solid black;
@@ -61,7 +65,9 @@ header .intro-text .skills {
   margin: 0 auto;
 }
 
-// ## Artist Detail Page ##
+/*********************************************
+				ARTIST DETAIL PAGE
+*********************************************/
 .content-wrapper {
 	max-width: 1140px;
 	background: #fff;
@@ -135,4 +141,12 @@ input[type=submit] {
 
 .desc {
   background-image: url(http://res.cloudinary.com/dyl4vtost/image/upload/v1485117498/arrow_down_tt7ugm.gif);
+}
+
+/*********************************************
+				NAVBAR
+*********************************************/
+
+.navbar-default {
+  background-color: #fff;
 }
