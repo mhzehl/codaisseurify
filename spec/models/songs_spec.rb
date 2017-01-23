@@ -2,33 +2,39 @@ require 'rails_helper'
 
 RSpec.describe Song do
 
-  describe "validations" do
-    # it "is invalid without a name" do
-    #   song = Song.new(name: "")
-    #   song.valid?
-    #   expect(song.errors).to have_key(:name)
-    # end
-    #
-    # it "is invalid without a release year" do
-    #   song = Song.new(release_year: "")
-    #   song.valid?
-    #   expect(song.errors).to have_key(:release_year)
-    # end
-    #
-    # it "is invalid without a video url" do
-    #   song = Song.new(video_url: "")
-    #   song.valid?
-    #   expect(song.errors).to have_key(:video_url)
-    # end
-    #
-    # let(:song) {create(:song)}
+  # Make sure factory works
+  it "has a valid factory" do
+    expect(build(:song)).to be_valid
+  end
 
-    it "is not valid without a name" do
-      artist = build(:artist)
-      song1 = Song.create!(name: "Uprising", release_year: 2006, video_url: "https://www.youtube.com/watch?v=w8KQmps-Sog", artist)
-      song1.name = nil
+  describe "validations" do
+    it "is invalid without a name" do
+      song = Song.new(name: "")
       song.valid?
       expect(song.errors).to have_key(:name)
+    end
+
+    it "is invalid without a release year" do
+      song = Song.new(release_year: "")
+      song.valid?
+      expect(song.errors).to have_key(:release_year)
+    end
+
+    it "is invalid without a video url" do
+      song = Song.new(video_url: "")
+      song.valid?
+      expect(song.errors).to have_key(:video_url)
+    end
+  end
+
+  # Association between Song and Artist
+  describe "the association with Song" do
+    let!(:song) { build(:song) }
+
+    it "is not valid without an artist" do
+      song.artist = nil
+      song.valid?
+      expect(song.errors).to have_key(:artist)
     end
   end
 end

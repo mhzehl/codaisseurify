@@ -7,6 +7,7 @@ RSpec.describe Artist do
     expect(build(:artist)).to be_valid
   end
 
+  # Make sure validations work
   describe "validations" do
     it "is invalid without a name" do
       artist = Artist.new(name: "")
@@ -42,6 +43,7 @@ RSpec.describe Artist do
     end
   end
 
+    # Association between Artist and Song
     describe "the association with Song" do
       let!(:artist1) { create(:artist) }
       let!(:artist2) { create(:artist, name: "ZZ-top", genre: "Blues Rock", band_members: 6, image_url: "http://res.cloudinary.com/dyl4vtost/image/upload/v1485084835/zz-top_k0kock.jpg") }
